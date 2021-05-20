@@ -8,17 +8,30 @@ import { BarberComponent } from './barber/barber.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BarberViewComponent } from './barber-view/barber-view.component';
+import { BarberViewByIdComponent } from './barber-view-by-id/barber-view-by-id.component';
+import { FirstPageComponent } from './first-page/first-page.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     BarberComponent,
     AppointmentComponent,
+    BarberViewComponent,
+    BarberViewByIdComponent,
+    FirstPageComponent,
+    
     
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [AppointmentService,BarberService],
   bootstrap: [AppComponent]

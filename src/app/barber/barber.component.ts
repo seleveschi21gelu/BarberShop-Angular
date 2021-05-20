@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { first } from 'rxjs/operators'
-import { analyzeAndValidateNgModules } from '@angular/compiler';
+
 
 @Component({
   selector: 'app-barber',
@@ -12,7 +12,14 @@ import { analyzeAndValidateNgModules } from '@angular/compiler';
 })
 export class BarberComponent implements OnInit {
 
-barberForm : FormGroup;
+  barberList:any;
+
+barberForm = new FormGroup({
+  name: new FormControl('',Validators.required),
+  telephone: new FormControl('',Validators.required),
+  description: new FormControl('',Validators.required)
+
+});
 validMessage: string="";
   barberRegistration:any;
   isAddMode:any;
@@ -22,12 +29,6 @@ validMessage: string="";
 
   ngOnInit(): void {
 
-    this.barberForm=new FormGroup({
-      name: new FormControl('',Validators.required),
-      telephone: new FormControl('',Validators.required),
-      description: new FormControl('',Validators.required)
-    
-    })
     let id = this.route.snapshot.params.id;         
     this.isAddMode = !id;
 
@@ -44,11 +45,10 @@ validMessage: string="";
     if(id){
       this.barberService.updateBarberById(id,this.barberForm.value);
       this.validMessage="Barber updated"
-    } else if(this.barberForm?.valid){
-      this.validMessage = "Barber submitted."
-      this.barberService.addBarber(this.barberForm.value).subscribe();
-    } else{
-      this.validMessage = "Please fill out the form before submitting";
+
+    } else { this.barberService.addBarber(this.barberForm.value).subscribe();
+          this.validMessage = "Barber submitted."
+
     }
   }
 

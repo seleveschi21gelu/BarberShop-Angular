@@ -20,7 +20,7 @@ export class AppointmentService {
     return this.http.post('http://localhost:8080/api',appointment,httpOptions);
   }
   getAppointment(id:number){
-    return this.http.get('http://localhost:8080/api'+id);
+    return this.http.get('http://localhost:8080/api/'+id);
   }
   updateAppointmentById(id:number,appointment:any){
     return this.http.put('http://localhost:8080/api'+id,appointment).subscribe();

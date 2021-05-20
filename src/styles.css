@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import './css/exp.css';
+/* // @import 'D:\Java\final-project-angular2\src\assets\images\folder.jpeg'; */
+
+.pointer{
+    cursor:pointer;
+}
+
+
+html, body {
+    height: 100%;
+    margin: 0;
+    }
+    .wrapper {
+    min-height: 100%;
+    
+    
+    margin-bottom: -50px;
+    }
+    .footer,
+    .push {
+    height: 50px;
+    }

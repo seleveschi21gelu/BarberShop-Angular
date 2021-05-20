@@ -13,15 +13,17 @@ import { first } from 'rxjs/operators';
 export class AppointmentComponent implements OnInit {
 
   barberList:any;
-  appointmentForm : FormGroup;
+  appointmentForm !: FormGroup;
   validMessage: string = "";
   appointmentRegistration: any;
   isAddMode:any;
   readonly: boolean = false;
 
 
-  constructor(private appointmentService:AppointmentService,private barberService:BarberService, private route:ActivatedRoute) {
-    this.barberService.getBarbers().subscribe(barber=>this.barberList=barber);
+  constructor(private appointmentService:AppointmentService,
+    private barberService:BarberService,
+     private route:ActivatedRoute) {
+    this.barberService.getBarbers().subscribe(barbers=>this.barberList=barbers);
    }
 
   ngOnInit(): void {
@@ -36,7 +38,7 @@ export class AppointmentComponent implements OnInit {
       barber:new FormControl('',Validators.required)
     });
 
-    if(this.isAddMode) {
+    if(!this.isAddMode) {
       this.appointmentService.getAppointment(id)
       .pipe(first())
       .subscribe(x=> this.appointmentForm.patchValue(x))
@@ -44,19 +46,30 @@ export class AppointmentComponent implements OnInit {
 
     }
 
+    // submitRegistration(){
+    //   let id = this.route.snapshot.params.id;
+    //   if(id){
+    //     this.appointmentService.updateAppointmentById(id,this.appointmentForm.value);
+    //     this.validMessage="Appointment updated"
+    //   }
+    //   else {
+    //     this.appointmentService.addAppointment(this.appointmentForm.value).subscribe();
+    //     this.validMessage="Appointment registrated"
+    //   }
     submitRegistration(){
-      let id = this.route.snapshot.params.id;
+      let id =this.route.snapshot.params.id;
       if(id){
-        this.appointmentService.updateAppointmentById(id, this.appointmentForm.value);
-        this.validMessage="Appointment updated"
+        this.appointmentService.updateAppointmentById(id,this.appointmentForm.value);
+        this.validMessage="Appointment updated";
       }
-      else if(this.appointmentForm?.valid){
-        this.appointmentService.addAppointment(this.appointmentForm.value).subscribe();
-        this.validMessage="Appointment registrated"
-      }
-      else{
+    else if(this.appointmentForm?.valid){
+      this.appointmentService.addAppointment(this.appointmentForm.value).subscribe();
+      this.validMessage = "Your appointment has been registrated. Thank you!";
+      }else{
         this.validMessage="The form isn't complete"
       }
+    
+      
     }
 
     getAppointmentRegistration(id:number){
@@ -68,6 +81,24 @@ export class AppointmentComponent implements OnInit {
       );
     }
 
+    get client(){
+      return this.appointmentForm.get('client');
+    }
+
+    get date(){
+      return this.appointmentForm.get('date');
+    }    
+    get time(){
+      return this.appointmentForm.get('time');
+    }
+    get telephone(){
+      return this.appointmentForm.get('telephone');
+    }
+    get barber(){
+      return this.appointmentForm.get('berber');
+    }
+
+    
 
   }
 

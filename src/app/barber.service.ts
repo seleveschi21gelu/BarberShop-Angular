@@ -22,13 +22,13 @@ export class BarberService {
     return this.http.post('http://localhost:8080/barber',barber,httpOptions);
   }
   getBarber(id:number){
-    return this.http.get('http://localhost:8080/barber'+id);
+    return this.http.get('http://localhost:8080/barber/'+id);
   }
   updateBarberById(id:number,barber:any){
-    return this.http.put('http://localhost:8080/barber'+id,barber).subscribe();
+    return this.http.put('http://localhost:8080/barber/'+id,barber).subscribe();
   }
   deleteBarberById(id:number){
-    return this.http.delete('http://localhost:8080/barber'+id);
+    return this.http.delete('http://localhost:8080/barber/'+id);
   }
 
 }

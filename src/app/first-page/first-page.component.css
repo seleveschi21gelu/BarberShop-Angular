@@ -1,0 +1,62 @@
+.orar{margin-left: 650px;}
+section.programare .grid-x .cell {
+    position: relative;
+    color: #d1d1d1;
+    font-size: .9rem;
+    margin-left: 320px;
+}
+/* .grid-x{margin-left: -150px;} */
+.small-4.cell{
+    margin-right: 250px;
+    height: 160px;
+}
+.grid-x.or{
+margin-left: -320px;
+}
+/* .small-8.cell.text-right{
+
+    margin-top: -16px;
+} */
+h5{ 
+    margin-top: -125px;
+ }
+ h6{
+     margin-top: -85px;
+     font-size: 10px;
+ }
+ .button__1{margin-top: -20px;}
+ .price.cell.small-1{
+     font-size: 18px;
+ }
+h6 {font-size: 15px;
+
+ }
+ .small-8.cell.text-right{
+
+    margin-top: -200px;
+ }
+ .small-9.cell.text-right{
+margin-top: -25px;
+margin-left: -100px;
+
+ }
+ .small-5.cell{
+margin-left: 20px;
+
+ }
+ .testimonial1{
+     /* margin-left: -00px; */
+     width: 300px;
+ }
+ .testimonial2{
+     margin-left: 500px;
+     margin-top:-340px;
+     width: 300px;
+
+ }
+
+ .testimonial3{
+    margin-left: 1000px;
+    margin-top:-306px;
+    width: 300px;
+}
