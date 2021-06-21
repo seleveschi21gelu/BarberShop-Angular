@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { BarberComponent } from './barber/barber.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { BarberViewComponent } from './barber-view/barber-view.component';
+import { AppointmentviewComponent } from './appointmentview/appointmentview.component';
 
 const routes: Routes=[
 
@@ -19,6 +20,10 @@ const routes: Routes=[
   {
     path:'appointment',
     component:AppointmentComponent
+  },
+    {
+    path:'appointment/view',
+    component:AppointmentviewComponent
   }
 ,
   { path:'home',

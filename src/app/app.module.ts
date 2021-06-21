@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BarberViewComponent } from './barber-view/barber-view.component';
 import { BarberViewByIdComponent } from './barber-view-by-id/barber-view-by-id.component';
 import { FirstPageComponent } from './first-page/first-page.component';
+import { AppointmentviewComponent } from './appointmentview/appointmentview.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { FirstPageComponent } from './first-page/first-page.component';
     BarberViewComponent,
     BarberViewByIdComponent,
     FirstPageComponent,
+    AppointmentviewComponent,
     
     
   ],

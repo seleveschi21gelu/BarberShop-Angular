@@ -5,3 +5,12 @@
 .btn-dark.sub{
     width: 88px;
 }
+input{
+    height: 45px;
+}
+.formular form textarea::placeholder, .formular form select {
+    transition: 300ms;
+    font-size: .9rem;
+    color: #d1d1d1;
+    height: 45px;
+}
