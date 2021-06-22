@@ -1,0 +1,12 @@
+.container{width: 550px;}
+label{font-size: 25px;}
+.form-control{font-size: 20px;}
+button{font-family: "Raleway-Medium";
+    background-color: transparent;
+    text-align: left;
+    text-transform: uppercase;
+    color: #d6a354;
+    border: 2px solid #d6a354;
+margin-left: 293px;
+width: 223px;
+}

@@ -32,7 +32,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="navigation__bar">
 	<div class="grid-container">
 		<div class="grid-x align-middle">
-			<div class="cell small-6 large-3"><a href="https://www.barber.ro/"><img class="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3Pil4zbYznmh13uMnsNR74F6YYXf0c9C-gZn4zYQLw-UzXzKFsWuVo1UXbUG4r9XGa74&usqp=CAU" alt="" width="200px" ></a></div>
+			<div class="cell small-6 large-3"><a href="/"><img class="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3Pil4zbYznmh13uMnsNR74F6YYXf0c9C-gZn4zYQLw-UzXzKFsWuVo1UXbUG4r9XGa74&usqp=CAU" alt="" width="200px" ></a></div>
 			<div class="cell small-12 large-9 text-right navigation__mobile">
 				<nav>
 					<ul>
@@ -103,8 +103,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
     <div class="container">
-        <h2>Appointment Register</h2>
-        <p><a class="btn btn-primary" routerLink="/competition"></a></p>
+        <h2>Appointment Register</h2><br><br>
+        <!-- <p><a class="btn btn-primary" routerLink="/competition"></a></p> -->
         <table class="table table-bordered table-inverse">
         <tr>
             <th>Client</th>
@@ -121,9 +121,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         <tr *ngFor="let app of appointment">
             <!-- <td [routerLink]="['/appointment/view/', competition.id]" class="pointer"> -->
-            <td>
-
-                {{app.client}}
+                    <td >
+                        <a [routerLink]="['/appointment/view/', app.id]">
+                {{app.client}}</a> 
             </td>
             <td>
                 {{app.date}}
@@ -140,12 +140,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <td>
             <button *ngIf="app" (click)="deleteAppointmentById(app.id)" class="btn btn-light"> Delete</button>
              </td>
-             <td>
-                 <!-- <button [routerLink]="['/competition/',competition.id]" class="btn btn-light">Update</button> -->
-             </td>
+             
         </tr>
     </table>
     </div>
+    <br>
 
 
     
@@ -168,26 +167,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17"><path d="M8.5,4.14a4.25,4.25,0,0,1,2.18.59,4.38,4.38,0,0,1,1.59,1.59,4.34,4.34,0,0,1,0,4.36,4.38,4.38,0,0,1-1.59,1.59,4.34,4.34,0,0,1-4.36,0,4.38,4.38,0,0,1-1.59-1.59,4.34,4.34,0,0,1,0-4.36A4.38,4.38,0,0,1,6.32,4.72,4.25,4.25,0,0,1,8.5,4.14Zm0,7.21A2.85,2.85,0,0,0,11.35,8.5,2.85,2.85,0,0,0,8.5,5.65,2.85,2.85,0,0,0,5.65,8.5,2.85,2.85,0,0,0,8.5,11.35Zm5.58-7.4a1.18,1.18,0,0,1-.32.72,0.92,0.92,0,0,1-.7.3,1,1,0,0,1-1-1A1,1,0,0,1,14.08,3.95ZM17,5Q17,6,17,8.5T16.94,12a7.16,7.16,0,0,1-.32,1.88,4.44,4.44,0,0,1-2.69,2.69,7.16,7.16,0,0,1-1.88.32Q11,17,8.5,17T5,16.94a6.2,6.2,0,0,1-1.88-.36,4,4,0,0,1-1.65-1,4.42,4.42,0,0,1-1-1.65A7.16,7.16,0,0,1,.06,12Q0,11,0,8.5T0.06,5A7.16,7.16,0,0,1,.38,3.07,4.44,4.44,0,0,1,3.07.38,7.16,7.16,0,0,1,5,.06Q6,0,8.5,0T12,0.06a7.16,7.16,0,0,1,1.88.32,4.44,4.44,0,0,1,2.69,2.69A7.72,7.72,0,0,1,17,5Zm-1.82,8.54a8,8,0,0,0,.3-2q0-.83,0-2.35V7.89q0-1.56,0-2.35a7.61,7.61,0,0,0-.3-2,2.74,2.74,0,0,0-1.63-1.63,7.61,7.61,0,0,0-2-.3q-0.83,0-2.35,0H7.89q-1.52,0-2.35,0a8,8,0,0,0-2,.3A2.74,2.74,0,0,0,1.86,3.49a7.61,7.61,0,0,0-.3,2q0,0.83,0,2.35V9.11q0,1.52,0,2.35a8,8,0,0,0,.3,2,2.88,2.88,0,0,0,1.63,1.63,8,8,0,0,0,2,.3q0.83,0,2.35,0H9.11q1.56,0,2.35,0a7.61,7.61,0,0,0,2-.3A2.88,2.88,0,0,0,15.14,13.51Z" transform="translate(0 0)"/></svg>
                 </a>
             </div>
-            <div class="cell">
-                <a href="https://apps.apple.com/us/app/original-barber-shop/id1477051769?ls=1" class="apps" target="_blank">
-                    <img src="https://www.barber.ro/assets/images/app-store.png" alt="App Store">
-                </a>
-                <a href="https://play.google.com/store/apps/details?id=original.barbershop.ro" class="apps" target="_blank">
-                    <img src="https://www.barber.ro/assets/images/google-play.png" alt="Google Play">
-                </a>
-            </div>
+        
             <div class="cell">
                 Telefon: <a href="tel:0751967057">0751 967 057</a> / <a href="tel:"></a>
             </div>
             <div class="cell">
                 Email: <a href="mailto:office@barber.ro">office@barber.ro</a>
             </div>
-            <div class="cell">
-                © SC Original Barber Shop SRL, RO 38731709 - <a href="https://www.barber.ro/politica-de-confidentialitate/" target="_blank">Politica de confidentialitate</a> - <a href="https://www.barber.ro/politica-de-cookies/"  target="_blank">Politica de cookies</a> - <a href="http://www.anpc.gov.ro/" target="_blank">ANPC</a>
-            </div>
-            <div class="cell">
-                <a href="https://scdesign.ro/creare-site-web/" target="_blank">Site web dezvoltat cu pasiune de <strong>SCDesign.ro</strong></a>
-            </div>
+           
         </div>
     </div>
 </footer><script src="https://www.barber.ro/assets/js/programare-online_cache.js"></script>

@@ -66,7 +66,7 @@ export class AppointmentComponent implements OnInit {
       this.appointmentService.addAppointment(this.appointmentForm.value).subscribe();
       this.validMessage = "Your appointment has been registrated. Thank you!";
       }else{
-        this.validMessage="The form isn't complete"
+        this.validMessage="The form isn't complete!"
       }
     
       

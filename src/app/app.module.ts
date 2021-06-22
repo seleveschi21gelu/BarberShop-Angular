@@ -14,6 +14,7 @@ import { BarberViewComponent } from './barber-view/barber-view.component';
 import { BarberViewByIdComponent } from './barber-view-by-id/barber-view-by-id.component';
 import { FirstPageComponent } from './first-page/first-page.component';
 import { AppointmentviewComponent } from './appointmentview/appointmentview.component';
+import { AppointmentViewByIdComponent } from './appointment-view-by-id/appointment-view-by-id.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { AppointmentviewComponent } from './appointmentview/appointmentview.comp
     BarberViewByIdComponent,
     FirstPageComponent,
     AppointmentviewComponent,
+    AppointmentViewByIdComponent,
     
     
   ],

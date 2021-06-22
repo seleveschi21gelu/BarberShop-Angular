@@ -46,9 +46,12 @@ validMessage: string="";
       this.barberService.updateBarberById(id,this.barberForm.value);
       this.validMessage="Barber updated"
 
-    } else { this.barberService.addBarber(this.barberForm.value).subscribe();
-          this.validMessage = "Barber submitted."
-
+    } else if(this.barberForm?.valid) {
+      this.barberService.addBarber(this.barberForm.value).subscribe()
+      this.barberService.addBarber(this.barberForm.value).subscribe();
+          this.validMessage = "Barber submitted.";
+    }else{
+      this.validMessage="The form isn't complete!";
     }
   }
 

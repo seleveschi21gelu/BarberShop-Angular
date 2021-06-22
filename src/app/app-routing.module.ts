@@ -1,3 +1,4 @@
+import { AppointmentViewByIdComponent } from './appointment-view-by-id/appointment-view-by-id.component';
 import { FirstPageComponent } from './first-page/first-page.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -15,6 +16,9 @@ const routes: Routes=[
   {
     path:'barber/view',
     component:BarberViewComponent
+  },{
+    path: 'appointment/view/:id',
+    component:AppointmentViewByIdComponent
   },
 
   {
@@ -26,7 +30,7 @@ const routes: Routes=[
     component:AppointmentviewComponent
   }
 ,
-  { path:'home',
+  { path:'',
 component:FirstPageComponent
 }
   

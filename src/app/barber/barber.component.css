@@ -1,8 +1,16 @@
-.t{
-    height: 25px;
+.form-control2{
+    height: 105px;
 }
 
 .formular{
     margin-left: 325px;
     width: 50%;
 }
+.btn.btn-primary{width: 87px;}
+.btn.btn-primary2{width: 87px;
+margin-top: -120px;
+margin-left: 500px;
+
+}
+footer{height: 380px;}
+.has-info{text-align: center;}
